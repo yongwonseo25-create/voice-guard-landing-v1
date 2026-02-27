@@ -112,18 +112,49 @@ function App() {
           음성 하나로 완성되는 요양 일지. 공단 평가 완벽 방어.
         </motion.p>
 
-        <motion.button
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          whileHover={{ scale: 1.05, y: -4 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ duration: 0.3 }}
-          onClick={() => setIsModalOpen(true)}
-          className="text-white font-bold text-lg lg:text-xl px-10 py-5 rounded-2xl shadow-[0_8px_32px_rgba(0,87,255,0.3)] hover:shadow-[0_20px_48px_rgba(0,87,255,0.5)] flex items-center justify-center cursor-pointer border border-blue-400/20 backdrop-blur-sm"
-          style={{ background: 'linear-gradient(135deg, #0057FF 0%, #003db3 100%)' }}>
-          무료로 환수 리스크 진단받기
-        </motion.button>
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="relative group mt-8"
+        >
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-[24px] blur opacity-40 group-hover:opacity-80 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+          <motion.button
+            whileHover={{ scale: 1.05, y: -4 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+            onClick={() => setIsModalOpen(true)}
+            className="relative text-white font-bold text-lg lg:text-xl px-12 py-6 rounded-2xl shadow-[0_8px_32px_rgba(0,87,255,0.3)] flex items-center justify-center cursor-pointer border border-blue-400/20 backdrop-blur-sm w-full"
+            style={{ background: 'linear-gradient(135deg, #0057FF 0%, #003db3 100%)' }}>
+            무료로 환수 리스크 진단받기
+          </motion.button>
+        </motion.div>
       </main>
+
+      {/* Partner Logos - Marquee */}
+      <section className="relative z-10 w-full border-y border-white/5 bg-white/[0.01] py-16 mb-48 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-8 mb-12 text-center">
+          <p className="text-gray-400 text-sm font-medium tracking-widest uppercase">대한민국 상위 1% 요양원들이 선택한 보이스 가드</p>
+        </div>
+        <div className="flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="flex shrink-0 animate-marquee gap-16 md:gap-32 items-center justify-around min-w-full px-8 opacity-40 grayscale">
+            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 bg-white/20 rounded-full"></div>효라밸 요양원</div>
+            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-md bg-white/20"></div>A+ 복지센터</div>
+            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 transform rotate-45 bg-white/20"></div>온유한집</div>
+            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-t-full bg-white/20"></div>실버 스마트</div>
+            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 bg-white/20 rounded-full"></div>효라밸 요양원</div>
+            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-md bg-white/20"></div>A+ 복지센터</div>
+          </div>
+          <div aria-hidden="true" className="flex shrink-0 animate-marquee gap-16 md:gap-32 items-center justify-around min-w-full px-8 opacity-40 grayscale">
+            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 bg-white/20 rounded-full"></div>효라밸 요양원</div>
+            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-md bg-white/20"></div>A+ 복지센터</div>
+            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 transform rotate-45 bg-white/20"></div>온유한집</div>
+            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-t-full bg-white/20"></div>실버 스마트</div>
+            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 bg-white/20 rounded-full"></div>효라밸 요양원</div>
+            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-md bg-white/20"></div>A+ 복지센터</div>
+          </div>
+        </div>
+      </section>
 
       {/* Bento Grid Section - Dark Glassmorphism */}
       <section className="relative z-10 w-full max-w-7xl mx-auto px-8">
@@ -135,8 +166,8 @@ function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            whileHover={{ y: -8, boxShadow: '0 24px 48px rgba(0,87,255,0.15)' }}
-            className="backdrop-blur-2xl border p-12 rounded-[32px] transition-all duration-300 flex flex-col group relative overflow-hidden"
+            whileHover={{ y: -16, boxShadow: '0 32px 80px rgba(0,87,255,0.25)' }}
+            className="backdrop-blur-2xl border p-12 rounded-[32px] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col group relative overflow-hidden"
             style={{ backgroundColor: 'rgba(255,255,255,0.02)', borderColor: 'rgba(255,255,255,0.06)' }}>
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="w-16 h-16 rounded-2xl mb-8 flex items-center justify-center relative shadow-lg" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)', border: '1px solid rgba(255,255,255,0.1)' }}>
@@ -154,8 +185,8 @@ function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ y: -8, boxShadow: '0 24px 48px rgba(0,87,255,0.15)' }}
-            className="backdrop-blur-2xl border p-12 rounded-[32px] transition-all duration-300 flex flex-col group relative overflow-hidden"
+            whileHover={{ y: -16, boxShadow: '0 32px 80px rgba(0,87,255,0.25)' }}
+            className="backdrop-blur-2xl border p-12 rounded-[32px] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col group relative overflow-hidden"
             style={{ backgroundColor: 'rgba(255,255,255,0.02)', borderColor: 'rgba(255,255,255,0.06)' }}>
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="w-16 h-16 rounded-2xl mb-8 flex items-center justify-center relative shadow-lg" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)', border: '1px solid rgba(255,255,255,0.1)' }}>
@@ -173,8 +204,8 @@ function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            whileHover={{ y: -8, boxShadow: '0 24px 48px rgba(0,87,255,0.15)' }}
-            className="backdrop-blur-2xl border p-12 rounded-[32px] transition-all duration-300 flex flex-col group relative overflow-hidden"
+            whileHover={{ y: -16, boxShadow: '0 32px 80px rgba(0,87,255,0.25)' }}
+            className="backdrop-blur-2xl border p-12 rounded-[32px] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col group relative overflow-hidden"
             style={{ backgroundColor: 'rgba(255,255,255,0.02)', borderColor: 'rgba(255,255,255,0.06)' }}>
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="w-16 h-16 rounded-2xl mb-8 flex items-center justify-center relative shadow-lg" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)', border: '1px solid rgba(255,255,255,0.1)' }}>
@@ -186,6 +217,42 @@ function App() {
             </p>
           </motion.div>
 
+        </div>
+      </section>
+
+      {/* Wall of Love Section */}
+      <section className="relative z-10 w-full max-w-7xl mx-auto px-8 mt-48 mb-48">
+        <div className="text-center mb-24">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight" style={{ wordBreak: 'keep-all' }}>도입 즉시 A등급, <br className="md:hidden" />원장님들의 진짜 후기</h2>
+          <p className="text-gray-400 text-xl font-light">보이스 가드와 함께 환수 리스크를 완벽하게 차단했습니다.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { name: "김ㅇㅇ 원장 (효라밸 요양원)", quote: "수기 일지 쓰느라 매일 2시간씩 야근하던 선생님들이 이제 정시에 퇴근합니다. 가장 확실한 복지네요." },
+            { name: "이ㅇㅇ 대표 (A+ 복지센터)", quote: "공단 평가관이 오셨을 때 보이스 가드 기록을 보여드렸더니 더 이상 묻지 않으시더군요. 든든합니다." },
+            { name: "박ㅇㅇ 시설장 (온유한집)", quote: "상태변화 기록을 말로만 하면 되니 기록 누락이 0건이 되었습니다. 환수 걱정에서 완전히 해방됐습니다." }
+          ].map((review, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              whileHover={{ y: -8, boxShadow: '0 24px 48px rgba(0,87,255,0.1)' }}
+              className="backdrop-blur-xl border p-10 rounded-[32px] flex flex-col gap-8 transition-all duration-500"
+              style={{ backgroundColor: 'rgba(255,255,255,0.02)', borderColor: 'rgba(255,255,255,0.06)' }}>
+              <div className="flex gap-2 text-yellow-400">
+                {"★★★★★".split('').map((star, i) => <span key={i} className="text-2xl drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]">{star}</span>)}
+              </div>
+              <p className="text-gray-300 text-xl leading-relaxed flex-grow font-light" style={{ wordBreak: 'keep-all' }}>"{review.quote}"</p>
+              <div className="flex items-center gap-4 border-t border-white/10 pt-8 mt-4">
+                <div className="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-300 font-bold border border-blue-500/30 text-lg">
+                  {review.name.charAt(0)}
+                </div>
+                <div className="text-lg font-medium text-white">{review.name}</div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
