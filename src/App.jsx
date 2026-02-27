@@ -161,7 +161,7 @@ function App() {
       </main>
 
       {/* Cloud Voucher Banner (Solution) */}
-      <section id="solution" className="relative z-10 w-full bg-red-600/10 border-y border-red-500/30 py-8 mb-32 group hover:bg-red-600/20 transition-all duration-300">
+      <section id="solution" className="relative z-10 w-full bg-red-600/10 border-y border-red-500/30 py-8 scroll-mt-20 min-h-[100vh] flex flex-col justify-center group hover:bg-red-600/20 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <div className="inline-block bg-red-500/20 text-red-200 text-xs font-bold px-3 py-1 rounded-full border border-red-500/30 mb-3 animate-pulse">긴급 마감 임박</div>
@@ -175,7 +175,7 @@ function App() {
       </section>
 
       {/* Bento Grid Section - Dark Glassmorphism */}
-      <section id="features" className="relative z-10 w-full max-w-7xl mx-auto px-8 mb-48">
+      <section id="features" className="relative z-10 w-full max-w-7xl mx-auto px-8 scroll-mt-20 min-h-[100vh] flex flex-col justify-center">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
           {/* Card 1 */}
@@ -239,7 +239,7 @@ function App() {
       </section>
 
       {/* Wall of Love Section */}
-      <section id="cases" className="relative z-10 w-full max-w-7xl mx-auto px-8 mt-48 mb-48">
+      <section id="cases" className="relative z-10 w-full max-w-7xl mx-auto px-8 scroll-mt-20 min-h-[100vh] flex flex-col justify-center">
         <div className="text-center mb-24">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight" style={{ wordBreak: 'keep-all' }}>도입 즉시 A등급, <br className="md:hidden" />원장님들의 진짜 후기</h2>
           <p className="text-gray-400 text-xl font-light">보이스 가드와 함께 환수 리스크를 완벽하게 차단했습니다.</p>
