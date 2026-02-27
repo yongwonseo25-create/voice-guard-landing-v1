@@ -67,24 +67,26 @@ function App() {
         style={{ background: 'radial-gradient(circle, rgba(0,87,255,0.3) 0%, rgba(10,25,47,0) 70%)' }}>
       </motion.div>
 
-      {/* Header - Sticky & Perfect Logo Recovery */}
+      {/* Header - Sticky & Perfect Logo Recovery & Navigation Links */}
       <header className="fixed top-0 left-0 w-full z-50 bg-[#0A192F]/80 backdrop-blur-md border-b border-white/5 transition-all">
         <div className="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
-          <img
-            src="/voice_guard.logo.svg"
-            alt="Voice Guard Logo"
-            className="h-[40px] w-auto bg-transparent block"
-          />
+          <a href="#" className="flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" className="h-[40px] w-auto text-white fill-current block">
+              <rect width="240" height="60" fill="transparent" />
+              <text x="10" y="40" fill="currentColor" fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fontWeight="800" fontSize="28" letterSpacing="-1">VOICE GUARD</text>
+              <circle cx="215" cy="30" r="8" fill="#0057FF" />
+            </svg>
+          </a>
           <nav className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-            <a href="#" className="hover:text-white transition-colors">솔루션</a>
-            <a href="#" className="hover:text-white transition-colors">기능</a>
-            <a href="#" className="hover:text-white transition-colors">고객사례</a>
+            <a href="#solution" className="hover:text-white transition-colors">솔루션</a>
+            <a href="#features" className="hover:text-white transition-colors">기능</a>
+            <a href="#cases" className="hover:text-white transition-colors">고객사례</a>
           </nav>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <main className="relative z-10 w-full max-w-7xl mx-auto px-8 min-h-[100vh] flex flex-col justify-center items-center text-center pt-24 pb-12">
+      {/* Hero Section - 100vh Compressed */}
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-8 min-h-[100vh] flex flex-col justify-center items-center text-center pt-28 pb-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,7 +102,7 @@ function App() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight mb-8 text-white leading-tight"
+          className="text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight mb-4 text-white leading-tight"
           style={{ wordBreak: 'keep-all', textShadow: '0 4px 24px rgba(0,0,0,0.5)' }}>
           단 1초. <br className="md:hidden" />서류 없는 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">요양원의 시작.</span>
         </motion.h1>
@@ -109,7 +111,7 @@ function App() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-xl lg:text-[22px] mb-16 leading-relaxed max-w-2xl font-light"
+          className="text-xl lg:text-[22px] mb-8 leading-relaxed max-w-2xl font-light"
           style={{ color: '#9CA3AF' }}>
           음성 하나로 완성되는 요양 일지. 공단 평가 완벽 방어.
         </motion.p>
@@ -118,7 +120,7 @@ function App() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="relative group mt-8"
+          className="relative group mt-4 mb-4"
         >
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-[24px] blur opacity-40 group-hover:opacity-80 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
           <motion.button
@@ -126,40 +128,54 @@ function App() {
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.3 }}
             onClick={() => setIsModalOpen(true)}
-            className="relative text-white font-bold text-lg lg:text-xl px-12 py-6 rounded-2xl shadow-[0_8px_32px_rgba(0,87,255,0.3)] flex items-center justify-center cursor-pointer border border-blue-400/20 backdrop-blur-sm w-full"
+            className="relative text-white font-bold text-lg lg:text-xl px-12 py-5 rounded-2xl shadow-[0_8px_32px_rgba(0,87,255,0.3)] flex items-center justify-center cursor-pointer border border-blue-400/20 backdrop-blur-sm w-full"
             style={{ background: 'linear-gradient(135deg, #0057FF 0%, #003db3 100%)' }}>
             무료로 환수 리스크 진단받기
           </motion.button>
         </motion.div>
+
+        {/* Partner Logos - Marquee moved inside Hero */}
+        <div className="w-screen border-y border-white/5 bg-white/[0.01] py-8 mt-auto overflow-hidden">
+          <div className="max-w-7xl mx-auto px-8 mb-6 text-center">
+            <p className="text-gray-400 text-sm font-medium tracking-widest uppercase">대한민국 상위 1% 요양원들이 선택한 보이스 가드</p>
+          </div>
+          <div className="flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            <div className="flex shrink-0 animate-marquee gap-16 md:gap-32 items-center justify-around min-w-full px-8 opacity-40 grayscale">
+              <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 bg-white/20 rounded-full"></div>효라밸 요양원</div>
+              <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-md bg-white/20"></div>A+ 복지센터</div>
+              <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 transform rotate-45 bg-white/20"></div>온유한집</div>
+              <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-t-full bg-white/20"></div>실버 스마트</div>
+              <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 bg-white/20 rounded-full"></div>효라밸 요양원</div>
+              <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-md bg-white/20"></div>A+ 복지센터</div>
+            </div>
+            <div aria-hidden="true" className="flex shrink-0 animate-marquee gap-16 md:gap-32 items-center justify-around min-w-full px-8 opacity-40 grayscale">
+              <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 bg-white/20 rounded-full"></div>효라밸 요양원</div>
+              <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-md bg-white/20"></div>A+ 복지센터</div>
+              <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 transform rotate-45 bg-white/20"></div>온유한집</div>
+              <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-t-full bg-white/20"></div>실버 스마트</div>
+              <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 bg-white/20 rounded-full"></div>효라밸 요양원</div>
+              <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-md bg-white/20"></div>A+ 복지센터</div>
+            </div>
+          </div>
+        </div>
       </main>
 
-      {/* Partner Logos - Marquee */}
-      <section className="relative z-10 w-full border-y border-white/5 bg-white/[0.01] py-16 mb-48 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 mb-12 text-center">
-          <p className="text-gray-400 text-sm font-medium tracking-widest uppercase">대한민국 상위 1% 요양원들이 선택한 보이스 가드</p>
-        </div>
-        <div className="flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <div className="flex shrink-0 animate-marquee gap-16 md:gap-32 items-center justify-around min-w-full px-8 opacity-40 grayscale">
-            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 bg-white/20 rounded-full"></div>효라밸 요양원</div>
-            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-md bg-white/20"></div>A+ 복지센터</div>
-            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 transform rotate-45 bg-white/20"></div>온유한집</div>
-            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-t-full bg-white/20"></div>실버 스마트</div>
-            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 bg-white/20 rounded-full"></div>효라밸 요양원</div>
-            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-md bg-white/20"></div>A+ 복지센터</div>
+      {/* Cloud Voucher Banner (Solution) */}
+      <section id="solution" className="relative z-10 w-full bg-red-600/10 border-y border-red-500/30 py-8 mb-32 group hover:bg-red-600/20 transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <div className="inline-block bg-red-500/20 text-red-200 text-xs font-bold px-3 py-1 rounded-full border border-red-500/30 mb-3 animate-pulse">긴급 마감 임박</div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2" style={{ wordBreak: 'keep-all' }}>2025 클라우드 바우처 수요기업 모집</h3>
+            <p className="text-red-200 text-lg">최대 <span className="font-bold text-white">1,550만 원</span> (80% 국고 지원) - 3월 중순 선착순 마감</p>
           </div>
-          <div aria-hidden="true" className="flex shrink-0 animate-marquee gap-16 md:gap-32 items-center justify-around min-w-full px-8 opacity-40 grayscale">
-            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 bg-white/20 rounded-full"></div>효라밸 요양원</div>
-            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-md bg-white/20"></div>A+ 복지센터</div>
-            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 transform rotate-45 bg-white/20"></div>온유한집</div>
-            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-t-full bg-white/20"></div>실버 스마트</div>
-            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 bg-white/20 rounded-full"></div>효라밸 요양원</div>
-            <div className="text-2xl font-bold flex items-center gap-3"><div className="w-8 h-8 rounded-md bg-white/20"></div>A+ 복지센터</div>
-          </div>
+          <button onClick={() => setIsModalOpen(true)} className="flex-shrink-0 bg-red-600 hover:bg-red-500 text-white font-bold py-4 px-8 rounded-xl shadow-[0_4px_16px_rgba(220,38,38,0.5)] transition-all whitespace-nowrap">
+            도입 혜택 상담하기
+          </button>
         </div>
       </section>
 
       {/* Bento Grid Section - Dark Glassmorphism */}
-      <section className="relative z-10 w-full max-w-7xl mx-auto px-8">
+      <section id="features" className="relative z-10 w-full max-w-7xl mx-auto px-8 mb-48">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
           {/* Card 1 */}
@@ -223,7 +239,7 @@ function App() {
       </section>
 
       {/* Wall of Love Section */}
-      <section className="relative z-10 w-full max-w-7xl mx-auto px-8 mt-48 mb-48">
+      <section id="cases" className="relative z-10 w-full max-w-7xl mx-auto px-8 mt-48 mb-48">
         <div className="text-center mb-24">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight" style={{ wordBreak: 'keep-all' }}>도입 즉시 A등급, <br className="md:hidden" />원장님들의 진짜 후기</h2>
           <p className="text-gray-400 text-xl font-light">보이스 가드와 함께 환수 리스크를 완벽하게 차단했습니다.</p>
