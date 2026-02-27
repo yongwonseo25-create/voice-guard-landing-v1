@@ -67,22 +67,24 @@ function App() {
         style={{ background: 'radial-gradient(circle, rgba(0,87,255,0.3) 0%, rgba(10,25,47,0) 70%)' }}>
       </motion.div>
 
-      {/* Header - Perfect Alignment & Logo Recovery */}
-      <header className="absolute top-0 left-0 w-full px-8 py-8 flex items-center justify-between z-50 max-w-7xl mx-auto right-0">
-        <img
-          src="/voice_guard.logo.svg"
-          alt="Voice Guard Logo"
-          className="h-10 w-auto bg-transparent block"
-        />
-        <nav className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-          <a href="#" className="hover:text-white transition-colors">솔루션</a>
-          <a href="#" className="hover:text-white transition-colors">기능</a>
-          <a href="#" className="hover:text-white transition-colors">고객사례</a>
-        </nav>
+      {/* Header - Sticky & Perfect Logo Recovery */}
+      <header className="fixed top-0 left-0 w-full z-50 bg-[#0A192F]/80 backdrop-blur-md border-b border-white/5 transition-all">
+        <div className="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+          <img
+            src="/voice_guard.logo.svg"
+            alt="Voice Guard Logo"
+            className="h-[40px] w-auto bg-transparent block"
+          />
+          <nav className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+            <a href="#" className="hover:text-white transition-colors">솔루션</a>
+            <a href="#" className="hover:text-white transition-colors">기능</a>
+            <a href="#" className="hover:text-white transition-colors">고객사례</a>
+          </nav>
+        </div>
       </header>
 
       {/* Hero Section */}
-      <main className="relative z-10 w-full max-w-7xl mx-auto px-8 pt-48 md:pt-64 pb-32 flex flex-col items-center text-center">
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-8 min-h-[100vh] flex flex-col justify-center items-center text-center pt-24 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
